@@ -1,9 +1,31 @@
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("fonts/geist-latin.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url("fonts/jetbrains-mono-latin.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
   --primary: #fff;
   --secondary: #999;
   --accent: #00ffc3;
-  --bg1: #0a0a0a;
-  --bg2: #141414;
+  --bg1: #021a16;
+  --bg2: color-mix(in srgb, var(--bg1) 96%, white);
   --bg3: #242424;
   --bg5: #444;
   --space-xs: 0.25rem;
@@ -12,10 +34,11 @@
   --space-l: 2rem;
   --space-xl: 4rem;
   --space-xxl: 6rem;
-  --font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    monospace;
+  --sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
   --line: 1.5;
   --max: 1280px;
 }
@@ -31,7 +54,7 @@
 
 html {
   color-scheme: dark;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -43,8 +66,11 @@ body {
   line-height: var(--line);
   color: var(--secondary);
   background: var(--bg1);
-  overflow-x: hidden;
+  overflow-x: clip;
   overflow-wrap: break-word;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 nav,
@@ -82,9 +108,8 @@ button {
 code {
   font-family: var(--mono);
   font-size: 0.9em;
-  background: var(--bg3);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
   padding: 0.1em 0.4em;
-  border-radius: 4px;
   color: var(--secondary);
 }
 
@@ -100,34 +125,37 @@ code {
 }
 
 nav {
-  background: var(--bg2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg1);
   padding: var(--space-s) 0;
-  box-shadow: 0 0 180px rgba(0, 255, 195, 0.35);
 }
 
 .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-s);
   color: var(--primary);
-  font-weight: 700;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.wordmark img {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  flex-shrink: 0;
 }
 
 .github-btn {
   flex: 0 0 auto;
-  border-radius: 100px;
-  background: var(--bg3);
-  color: var(--secondary);
   padding: var(--space-xs) var(--space-m);
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
-  transition:
-    transform 0.2s,
-    color 0.2s;
-}
-
-.github-btn:hover {
-  color: var(--accent);
-  text-decoration: none;
-  transform: scale(1.05);
 }
 
 header,
@@ -154,6 +182,16 @@ header .bar {
   display: block;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--sans);
+  text-wrap: balance;
+}
+
 h3 {
   font-size: 0.8rem;
   font-weight: 400;
@@ -165,7 +203,7 @@ h3 {
 
 h1 {
   font-size: clamp(2.75rem, 12vw, 5.5rem);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.1;
   color: var(--primary);
   margin-bottom: var(--space-m);
@@ -199,7 +237,6 @@ main {
 section {
   background: var(--bg2);
   padding: var(--space-xl);
-  border-radius: var(--space-s);
   margin-bottom: var(--space-xxl);
 }
 
@@ -246,6 +283,7 @@ table {
 }
 
 th {
+  font-family: var(--sans);
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -275,7 +313,6 @@ td:first-child {
   margin-left: auto;
   margin-right: auto;
   background: #000;
-  border-radius: 1.5rem;
   padding: var(--space-s);
   padding-left: var(--space-m);
   margin-bottom: var(--space-l);
@@ -295,22 +332,28 @@ td:first-child {
 
 .terminal button {
   flex-shrink: 0;
-  border-radius: 100px;
-  background: var(--bg3);
-  color: var(--secondary);
   padding: var(--space-xs) var(--space-m);
-  transition:
-    transform 0.2s,
-    color 0.2s;
 }
 
+.github-btn,
+.terminal button {
+  background: var(--accent);
+  color: var(--bg1);
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.github-btn:hover,
 .terminal button:hover {
+  background: color-mix(in srgb, var(--accent) 75%, white);
+  color: var(--bg1);
+  text-decoration: none;
   transform: scale(1.05);
-  color: var(--accent);
 }
 
 .terminal button.copied {
-  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 75%, white);
 }
 
 .steps {
@@ -330,7 +373,6 @@ td:first-child {
   line-height: 1;
   width: var(--space-l);
   height: var(--space-l);
-  border-radius: 50%;
   flex-shrink: 0;
   margin-top: calc((1rem * var(--line) - var(--space-l)) / 2);
   background: var(--bg3);
@@ -344,7 +386,7 @@ td:first-child {
 
 footer {
   padding: var(--space-l) 0;
-  background: var(--bg2);
+  background: var(--bg1);
 }
 
 footer .bar {
