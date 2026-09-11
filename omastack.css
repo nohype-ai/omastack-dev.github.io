@@ -164,26 +164,31 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.25rem, 8vw, 3.5rem);
-  font-weight: 400;
-  line-height: 1.15;
+  font-size: clamp(2.75rem, 12vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.1;
   color: var(--primary);
   margin-bottom: var(--space-m);
 }
 
 header p {
   font-size: clamp(1.25rem, 5vw, 1.75rem);
-  margin-bottom: var(--space-l);
 }
 
-header h2,
 section h2 {
   font-size: clamp(1.25rem, 5vw, 1.75rem);
   font-weight: 400;
 }
 
-header h2 a,
-section h2 a {
+.star-cta {
+  text-align: center;
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  font-weight: 400;
+  color: var(--primary);
+  margin-bottom: var(--space-xxl);
+}
+
+.star-cta a {
   color: var(--accent);
 }
 
