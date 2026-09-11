@@ -22,7 +22,7 @@
 
 :root {
   --primary: #fff;
-  --secondary: #999;
+  --secondary: #bbb;
   --accent: #00ffc3;
   --bg1: #021a16;
   --bg2: color-mix(in srgb, var(--bg1) 96%, white);
@@ -108,7 +108,7 @@ button {
 code {
   font-family: var(--mono);
   font-size: 0.9em;
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
   padding: 0.1em 0.4em;
   color: var(--secondary);
 }
@@ -236,6 +236,7 @@ main {
 
 section {
   background: var(--bg2);
+  border: 1px solid rgb(255 255 255 / 7%);
   padding: var(--space-xl);
   margin-bottom: var(--space-xxl);
 }
@@ -375,7 +376,7 @@ td:first-child {
   height: var(--space-l);
   flex-shrink: 0;
   margin-top: calc((1rem * var(--line) - var(--space-l)) / 2);
-  background: var(--bg3);
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
   font-weight: 700;
 }
 
