@@ -137,12 +137,12 @@ nav {
 
 .wordmark {
   display: inline-flex;
-  align-items: center;
+  /*align-items: center;*/
   gap: var(--space-s);
   color: var(--primary);
   font-family: var(--sans);
-  font-weight: 400;
-  font-size: 1.25rem;
+  font-weight: 600;
+  font-size: 1.42rem;
   line-height: 1;
 }
 
@@ -206,7 +206,7 @@ h3 {
 
 h1 {
   font-size: clamp(2.75rem, 12vw, 5.5rem);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.1;
   color: var(--primary);
   margin-bottom: var(--space-m);
@@ -220,15 +220,15 @@ header p {
   font-size: clamp(1.25rem, 5vw, 1.75rem);
 }
 
-section h2 {
+h2 {
   font-size: clamp(1.25rem, 5vw, 1.75rem);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .star-cta {
   text-align: center;
   font-size: clamp(1.25rem, 5vw, 1.75rem);
-  font-weight: 400;
+  font-weight: 600;
   color: var(--primary);
   margin-bottom: var(--space-xxl);
 }
