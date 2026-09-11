@@ -138,11 +138,11 @@ nav {
 .wordmark {
   display: inline-flex;
   /*align-items: center;*/
-  gap: var(--space-s);
+  gap: 0.35rem;
   color: var(--primary);
   font-family: var(--sans);
   font-weight: 600;
-  font-size: 1.42rem;
+  font-size: 1.44rem;
   line-height: 1;
 }
 
