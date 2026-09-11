@@ -1,1 +1,187 @@
-Test
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OmaStack</title>
+    <meta
+      name="description"
+      content="Declare Omarchy packages in two text files and apply them with omack update."
+    />
+    <meta property="og:title" content="OmaStack" />
+    <meta
+      property="og:description"
+      content="Bring your own bloat to Omarchy. Two lists. One command: omack update."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="omastack.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="bar">
+        <span class="wordmark">OmaStack</span>
+        <a
+          class="github-btn"
+          href="https://github.com/nohype-ai/OmaStack"
+          target="_blank"
+          rel="noopener noreferrer"
+          >★ GitHub</a
+        >
+      </div>
+    </nav>
+
+    <header>
+      <div class="bar">
+        <h3>Bloat as code</h3>
+        <h1>Bring Your Own Bloat to Omarchy</h1>
+        <p>You dream stack in seconds: <code>omack update</code></p>
+        <h2>
+          <a
+            href="https://github.com/nohype-ai/OmaStack"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Star OmaStack on GitHub&nbsp;↗</a
+          >
+        </h2>
+      </div>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <section>
+          <h3>Get started</h3>
+          <h2>Pin Your Dream Omarchy Stack in Minutes</h2>
+          <div class="terminal">
+            <pre id="setup">install -D omack ~/.local/bin/omack && omack init</pre>
+            <button type="button">↓ Copy</button>
+          </div>
+          <div class="steps">
+            <div class="step">
+              <span class="step-number">1</span>
+              <div class="step-content">
+                <h4>Run the above command</h4>
+                <p>
+                  Check out OmaStack and run the above command in the repo folder.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-number">2</span>
+              <div class="step-content">
+                <h4>Define your dream stack</h4>
+                <p>
+                  In <code>~/.config/omack/</code> edit
+                  <code>wanted.txt</code> and 
+                  <code>unwanted.txt</code>.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-number">3</span>
+              <div class="step-content">
+                <h4>Apply your stack</h4>
+                <p>
+                  Preview with <code>omack update --dry-run</code>, then
+                  <code>omack update</code>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>How it works</h3>
+          <h2>Two Lists – Full Transparancy</h2>
+
+          <div class="block">
+            <div class="files">
+              <article>
+                <h4><code>wanted.txt</code></h4>
+                <p>
+                  Packages that should be present.<br> Missing ones are installed
+                  with <code>omarchy pkg add</code>.
+                </p>
+              </article>
+              <article>
+                <h4><code>unwanted.txt</code></h4>
+                <p>
+                  Packages that should be absent.<br> Installed ones are removed
+                  with <code>omarchy pkg drop</code>.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="block">
+            <table>
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>What it does</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>omack init [--force]</code></td>
+                  <td>
+                    <code>wanted.txt</code> = explicitly installed packages
+                    (<code>pacman -Qqe</code>).<br>
+                    <code>unwanted.txt</code> = empty. Refuses to overwrite
+                    unless <code>--force</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>omack list</code></td>
+                  <td>Print explicitly installed packages.</td>
+                </tr>
+                <tr>
+                  <td><code>omack status</code></td>
+                  <td>
+                    Pending installs, pending removes, and names in both
+                    lists.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>omack update [--dry-run]</code></td>
+                  <td>
+                    Install missing wanted packages, remove installed
+                    unwanted ones.<br><code>--dry-run</code> previews with no
+                    changes.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="bar">
+        <div class="footer-links">
+          <a
+            href="https://github.com/nohype-ai/OmaStack"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub&nbsp;↗</a
+          >
+          <a
+            href="https://macstack.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            >MacStack&nbsp;↗</a
+          >
+          <a
+            href="https://nohype.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Nohype AI&nbsp;↗</a
+          >
+        </div>
+        © 2026 Nohype AI GmbH
+      </div>
+    </footer>
+
+    <script src="omastack.js"></script>
+  </body>
+</html>

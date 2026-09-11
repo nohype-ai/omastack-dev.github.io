@@ -1,0 +1,385 @@
+:root {
+  --primary: #fff;
+  --secondary: #999;
+  --accent: #00ffc3;
+  --bg1: #0a0a0a;
+  --bg2: #141414;
+  --bg3: #242424;
+  --bg5: #444;
+  --space-xs: 0.25rem;
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 2rem;
+  --space-xl: 4rem;
+  --space-xxl: 6rem;
+  --font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+  --line: 1.5;
+  --max: 1280px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0 solid currentColor;
+}
+
+html {
+  color-scheme: dark;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: var(--line);
+  color: var(--secondary);
+  background: var(--bg1);
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+}
+
+nav,
+header,
+main,
+footer {
+  min-width: 0;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.9em;
+  background: var(--bg3);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  color: var(--secondary);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-m);
+  max-width: min(var(--max), 90vw);
+  margin: 0 auto;
+  width: 100%;
+  min-width: 0;
+}
+
+nav {
+  background: var(--bg2);
+  padding: var(--space-s) 0;
+  box-shadow: 0 0 180px rgba(0, 255, 195, 0.35);
+}
+
+.wordmark {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.github-btn {
+  flex: 0 0 auto;
+  border-radius: 100px;
+  background: var(--bg3);
+  color: var(--secondary);
+  padding: var(--space-xs) var(--space-m);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 0.2s,
+    color 0.2s;
+}
+
+.github-btn:hover {
+  color: var(--accent);
+  text-decoration: none;
+  transform: scale(1.05);
+}
+
+header,
+main,
+footer {
+  width: 100%;
+}
+
+header {
+  padding: 4.5rem 0 var(--space-xxl);
+  text-align: center;
+}
+
+header .bar,
+main .wrap,
+footer .bar {
+  max-width: min(var(--max), 90vw);
+  margin: 0 auto;
+  width: 100%;
+  min-width: 0;
+}
+
+header .bar {
+  display: block;
+}
+
+h3 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-s);
+}
+
+h1 {
+  font-size: clamp(2.25rem, 8vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--primary);
+  margin-bottom: var(--space-m);
+}
+
+header p {
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  margin-bottom: var(--space-l);
+}
+
+header h2,
+section h2 {
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  font-weight: 400;
+}
+
+header h2 a,
+section h2 a {
+  color: var(--accent);
+}
+
+main {
+  flex: 1;
+}
+
+section {
+  background: var(--bg2);
+  padding: var(--space-xl);
+  border-radius: var(--space-s);
+  margin-bottom: var(--space-xxl);
+}
+
+section h2 {
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: var(--space-l);
+}
+
+section h3 {
+  text-align: center;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: var(--space-xs);
+}
+
+.block {
+  margin-bottom: var(--space-xl);
+}
+
+.block:last-child {
+  margin-bottom: 0;
+}
+
+.files {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-l);
+}
+
+.files h4 code {
+  background: none;
+  padding: 0;
+  color: var(--accent);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  text-align: left;
+  padding: 0 var(--space-m) var(--space-m) 0;
+}
+
+td {
+  vertical-align: top;
+  padding: var(--space-m) var(--space-m) var(--space-m) 0;
+  border-top: 1px solid var(--bg5);
+}
+
+td:first-child {
+  width: 38%;
+  white-space: nowrap;
+}
+
+.terminal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-s);
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #000;
+  border-radius: 1.5rem;
+  padding: var(--space-s);
+  padding-left: var(--space-m);
+  margin-bottom: var(--space-l);
+  min-width: 0;
+}
+
+.terminal pre {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  color: var(--accent);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: var(--line);
+}
+
+.terminal button {
+  flex-shrink: 0;
+  border-radius: 100px;
+  background: var(--bg3);
+  color: var(--secondary);
+  padding: var(--space-xs) var(--space-m);
+  transition:
+    transform 0.2s,
+    color 0.2s;
+}
+
+.terminal button:hover {
+  transform: scale(1.05);
+  color: var(--accent);
+}
+
+.terminal button.copied {
+  color: var(--accent);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: var(--space-xl);
+}
+
+.step {
+  display: flex;
+  gap: var(--space-s);
+}
+
+.step-number {
+  display: grid;
+  place-items: center;
+  line-height: 1;
+  width: var(--space-l);
+  height: var(--space-l);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: calc((1rem * var(--line) - var(--space-l)) / 2);
+  background: var(--bg3);
+  font-weight: 700;
+}
+
+.step-content {
+  flex: 1;
+  min-width: 0;
+}
+
+footer {
+  padding: var(--space-l) 0;
+  background: var(--bg2);
+}
+
+footer .bar {
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xl);
+}
+
+@media (max-width: 40rem) {
+  section {
+    padding: var(--space-l);
+  }
+
+  .files {
+    grid-template-columns: 1fr;
+  }
+
+  td:first-child {
+    white-space: normal;
+  }
+
+  footer .bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a,
+  button,
+  .github-btn {
+    transition: none;
+  }
+
+  .github-btn:hover,
+  .terminal button:hover {
+    transform: none;
+  }
+}
