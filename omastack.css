@@ -111,7 +111,7 @@ button {
 code {
   font-family: var(--mono);
   background: color-mix(in srgb, var(--accent) 7%, transparent);
-  padding: 0.05em 0.2em;
+  padding: 0.05em 0.4em;
 }
 
 .bar {
