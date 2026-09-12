@@ -155,10 +155,20 @@ nav {
 
 .github-btn {
   flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   padding: var(--space-xs) var(--space-m);
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.github-btn img {
+  width: 0.9em;
+  height: 0.9em;
+  display: block;
+  flex-shrink: 0;
 }
 
 header,
