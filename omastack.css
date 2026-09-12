@@ -21,8 +21,8 @@
 }
 
 :root {
-  --primary: #fff;
-  --secondary: #bbb;
+  --primary: #cc9;
+  --secondary: #bba;
   --accent: #00ffc3;
   --accent-bright: color-mix(in srgb, var(--accent) 55%, white);
   --bg1: #021a16;
@@ -140,7 +140,7 @@ nav {
   display: inline-flex;
   /*align-items: center;*/
   gap: 0.35rem;
-  color: var(--primary);
+  color: var(--secondary);
   font-family: var(--sans);
   font-weight: 600;
   font-size: 1.44rem;
@@ -227,7 +227,7 @@ h3 {
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--secondary);
   margin-bottom: var(--space-s);
 }
 
