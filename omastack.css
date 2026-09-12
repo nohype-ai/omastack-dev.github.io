@@ -21,13 +21,12 @@
 }
 
 :root {
-  /*--primary: #59b35b;*/
-  --primary: #b1cc66;
-  --secondary: #becc99;
+  --primary: #bccc8f;
+  --secondary: #a4b37d;
   --accent: #00cc9c;
   --accent-bright: #00ffc4;
-  --bg1: #0a1412;
-  --bg2: #0e1c19;
+  --bg1: #0d1a17;
+  --bg2: #122420;
   --bg3: #242424;
   --bg5: #444;
   --space-xs: 0.25rem;
