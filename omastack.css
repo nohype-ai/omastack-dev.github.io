@@ -153,7 +153,7 @@ nav {
   flex-shrink: 0;
 }
 
-.github-btn {
+.cta {
   flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
@@ -162,13 +162,29 @@ nav {
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
+  background: var(--accent);
+  color: var(--bg1);
+  transition:
+    background 0.2s,
+    transform 0.2s;
 }
 
-.github-btn img {
+.cta img {
   width: 0.9em;
   height: 0.9em;
   display: block;
   flex-shrink: 0;
+}
+
+.cta:hover {
+  background: var(--accent-bright);
+  color: var(--bg1);
+  text-decoration: none;
+  transform: scale(1.05);
+}
+
+.cta.copied {
+  background: var(--accent-bright);
 }
 
 header,
@@ -348,32 +364,6 @@ td:first-child {
   line-height: var(--line);
 }
 
-.terminal button {
-  flex-shrink: 0;
-  padding: var(--space-xs) var(--space-m);
-}
-
-.github-btn,
-.terminal button {
-  background: var(--accent);
-  color: var(--bg1);
-  transition:
-    background 0.2s,
-    transform 0.2s;
-}
-
-.github-btn:hover,
-.terminal button:hover {
-  background: var(--accent-bright);
-  color: var(--bg1);
-  text-decoration: none;
-  transform: scale(1.05);
-}
-
-.terminal button.copied {
-  background: var(--accent-bright);
-}
-
 .steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
@@ -438,13 +428,11 @@ footer .bar {
 
 @media (prefers-reduced-motion: reduce) {
   a,
-  button,
-  .github-btn {
+  button {
     transition: none;
   }
 
-  .github-btn:hover,
-  .terminal button:hover {
+  .cta:hover {
     transform: none;
   }
 }

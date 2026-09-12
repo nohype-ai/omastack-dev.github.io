@@ -1,11 +1,11 @@
 function copySetup(btn) {
   const code = document.getElementById("setup").textContent;
   navigator.clipboard.writeText(code).then(function () {
-    const original = btn.textContent;
+    const original = btn.innerHTML;
     btn.textContent = "Copied";
     btn.classList.add("copied");
     setTimeout(function () {
-      btn.textContent = original;
+      btn.innerHTML = original;
       btn.classList.remove("copied");
     }, 1800);
   });
