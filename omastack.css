@@ -209,7 +209,7 @@ header .bar {
   display: block;
 }
 
-h1,
+/*h1,*/
 h2,
 h4,
 h5,
@@ -228,39 +228,27 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.75rem, 12vw, 5.5rem);
+  font-size: clamp(2rem, 5vw, 5rem);
   font-weight: 600;
-  line-height: 1.1;
+  line-height: 1.2;
   color: var(--primary);
-  margin-bottom: var(--space-m);
+  margin-bottom: var(--space-l);
+  letter-spacing: -0.03em;
 }
 
 h1 span {
   color: var(--secondary);
 }
 
-header p {
-  font-size: clamp(1.25rem, 5vw, 1.75rem);
-}
-
 h2 {
-  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  color: var(--primary);
+  text-align: center;
+  font-size: 2rem;
   font-weight: 600;
 }
 
-.star-cta {
-  text-align: center;
-  font-size: clamp(1.25rem, 5vw, 1.75rem);
-  color: var(--primary);
-  margin-bottom: var(--space-xxl);
-}
-
-.star-cta a {
+h2 a {
   color: var(--accent);
-}
-
-.star-cta a:hover {
-  color: var(--accent-bright);
 }
 
 main {
@@ -275,8 +263,6 @@ section {
 }
 
 section h2 {
-  color: var(--primary);
-  text-align: center;
   margin-bottom: var(--space-l);
 }
 
@@ -396,6 +382,7 @@ h4,
 }
 
 footer {
+  margin-top: var(--space-xxl);
   padding: var(--space-l) 0;
   background: var(--bg1);
 }
