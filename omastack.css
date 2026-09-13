@@ -23,7 +23,7 @@
 :root {
   --primary: #bccc8f;
   --secondary: #a4b37d;
-  --accent: #00cc9c;
+  --accent: #009975;
   --accent-bright: #00ffc4;
   --bg1: #0d1a17;
   --bg2: #122420;
@@ -136,12 +136,10 @@ nav {
 
 .wordmark {
   display: inline-flex;
-  /*align-items: center;*/
+  align-items: center;
   gap: 0.35rem;
   color: var(--secondary);
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: 1.44rem;
+  font-size: 1.2rem;
   line-height: 1;
 }
 
@@ -153,6 +151,7 @@ nav {
 }
 
 .cta {
+  font-weight: 500;
   flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
@@ -212,7 +211,6 @@ header .bar {
 
 h1,
 h2,
-h3,
 h4,
 h5,
 h6 {
@@ -221,12 +219,12 @@ h6 {
 }
 
 h3 {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: var(--space-s);
+  margin-bottom: var(--space-m);
 }
 
 h1 {
