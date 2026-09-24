@@ -1,7 +1,8 @@
 #!/bin/bash
 # Install or replace ~/.local/bin/omack. Does not need a git checkout.
 # ~/.config/omastack/config.toml is created if missing and is never overwritten.
-# Package lists live in the stack folder, not in this config folder.
+# Then `omack init` asks for the stack folder if needed and creates
+# wanted.txt and unwanted.txt there. Existing lists are left unchanged.
 #
 #   curl -fsSL https://omastack.dev/install.sh | bash
 #
@@ -61,5 +62,23 @@ if [[ ! -e "$DIR/config.toml" ]]; then
 else
   echo "  keep  $DIR/config.toml"
 fi
+
+# Never pass --force. A later install updates omack and leaves edited lists alone.
+echo "  init  $DEST init"
+init_err="$(mktemp)"
+set +e
+"$DEST" init 2>"$init_err"
+init_rc=$?
+set -e
+if [[ "$init_rc" -eq 0 ]]; then
+  cat "$init_err" >&2
+elif [[ "$init_rc" -eq 2 ]]; then
+  echo "  keep  stack lists unchanged"
+else
+  cat "$init_err" >&2
+  rm -f "$init_err"
+  exit "$init_rc"
+fi
+rm -f "$init_err"
 
 echo "  ok    $($DEST version)"
