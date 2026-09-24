@@ -77,7 +77,8 @@
               <div class="step-content">
                 <h4>Run the above command</h4>
                 <p>
-                  It installs or updates <code>omack</code> and sets up your stack lists.
+                  It installs or updates <code>omack</code> and creates
+                  <code>~/.config/omastack</code>.
                 </p>
               </div>
             </div>
@@ -86,9 +87,9 @@
               <div class="step-content">
                 <h4>Define your dream stack</h4>
                 <p>
-                  In <code>~/.config/omack/</code> edit
-                  <code>wanted.txt</code> and 
-                  <code>unwanted.txt</code>.
+                  In your stack folder, edit <code>wanted.txt</code> and
+                  <code>unwanted.txt</code>. <code>omack</code> creates them
+                  there when they are missing.
                 </p>
               </div>
             </div>
@@ -140,6 +141,7 @@
                 <tr>
                   <td><code>omack init [--force]</code></td>
                   <td>
+                    In the stack folder,
                     <code>wanted.txt</code> = explicitly installed packages
                     (<code>pacman -Qqe</code>).<br>
                     <code>unwanted.txt</code> = empty. Refuses to overwrite
